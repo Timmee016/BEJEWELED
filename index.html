@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bejeweled by TC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Bejeweled by TC</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <div class="hero">
+            <h1>Welcome to Bejeweled by TC</h1>
+            <p>Your one-stop shop for exquisite jewelry</p>
+            <button onclick="learnMore()">Learn More</button>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Bejeweled by TC is dedicated to providing high-quality, unique jewelry pieces that add a touch of elegance to any outfit.</p>
+    </section>
+    <section id="collection">
+        <h2>Our Collection</h2>
+        <div class="gallery">
+            <div class="item">
+                <img src="images/ring.jpg" alt="Ring">
+                <p>Elegant Gold Ring</p>
+            </div>
+            <div class="item">
+                <img src="images/necklace.jpg" alt="Necklace">
+                <p>Beautiful Diamond Necklace</p>
+            </div>
+            <div class="item">
+                <img src="images/bracelet.jpg" alt="Bracelet">
+                <p>Charming Gold Bracelet</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Bejeweled by TC. All rights reserved.</p>
+    </footer>
+    <script src="bejewled.js"></script>
+</body>
+</html>
