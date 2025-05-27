@@ -1,0 +1,163 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart - Bejeweled by TC</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #fffdf9;
+      color: #333;
+    }
+
+    .header {
+      background-color: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #c09578;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #c09578;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .cart-item img {
+      width: 80px;
+      border-radius: 8px;
+    }
+
+    .item-details {
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    .item-details h3 {
+      margin-bottom: 5px;
+      font-size: 1.1rem;
+    }
+
+    .quantity-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .quantity-controls button {
+      padding: 5px 10px;
+      font-size: 1rem;
+      border: none;
+      background-color: #c09578;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      background-color: #c09578;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Bejeweled by TC</div>
+  </header>
+
+  <div class="container">
+    <h1>Your Shopping Cart</h1>
+    <div id="cart-items"></div>
+    <div class="total" id="cart-total">Total: $0</div>
+    <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+  </div>
+
+  <script>
+    const sampleCart = [
+      { id: 1, name: "Diamond Necklace", price: 120, quantity: 1, img: "images/necklace.jpg" },
+      { id: 2, name: "Gold Bracelet", price: 80, quantity: 2, img: "images/bracelet.jpg" }
+    ];
+
+    function renderCart() {
+      const cartContainer = document.getElementById('cart-items');
+      cartContainer.innerHTML = '';
+      let total = 0;
+
+      sampleCart.forEach((item, index) => {
+        total += item.price * item.quantity;
+        cartContainer.innerHTML += `
+          <div class="cart-item">
+            <img src="${item.img}" alt="${item.name}" />
+            <div class="item-details">
+              <h3>${item.name}</h3>
+              <p>$${item.price} x ${item.quantity}</p>
+            </div>
+            <div class="quantity-controls">
+              <button onclick="updateQuantity(${index}, -1)">-</button>
+              <span>${item.quantity}</span>
+              <button onclick="updateQuantity(${index}, 1)">+</button>
+            </div>
+          </div>`;
+      });
+
+      document.getElementById('cart-total').innerText = `Total: $${total}`;
+    }
+
+    function updateQuantity(index, change) {
+      sampleCart[index].quantity += change;
+      if (sampleCart[index].quantity < 1) sampleCart[index].quantity = 1;
+      renderCart();
+    }
+
+    function checkout() {
+      const payload = JSON.stringify(sampleCart);
+      // Mock backend submission
+      fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload
+      })
+      .then(res => res.json())
+      .then(data => alert('Checkout complete!'))
+      .catch(err => alert('Checkout failed'));
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>
