@@ -1,0 +1,117 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Detail - Bejeweled by TC</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fffdf9;
+      margin: 0;
+      color: #333;
+    }
+
+    .header {
+      background-color: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #c09578;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .product-image {
+      flex: 1;
+    }
+
+    .product-image img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-info h1 {
+      color: #c09578;
+    }
+
+    .product-info p {
+      margin: 10px 0;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      margin: 15px 0;
+      color: #333;
+    }
+
+    .add-to-cart {
+      background-color: #c09578;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Bejeweled by TC</div>
+  </header>
+
+  <div class="container">
+    <div class="product-image">
+      <img id="product-img" src="" alt="Product Image">
+    </div>
+    <div class="product-info">
+      <h1 id="product-name"></h1>
+      <p id="product-desc"></p>
+      <div class="price" id="product-price"></div>
+      <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    const product = JSON.parse(localStorage.getItem('currentProduct'));
+
+    if (product) {
+      document.getElementById('product-img').src = product.img;
+      document.getElementById('product-name').innerText = product.name;
+      document.getElementById('product-desc').innerText = product.desc || 'A beautiful piece of jewelry to treasure.';
+      document.getElementById('product-price').innerText = `$${product.price}`;
+    }
+
+    function addToCart() {
+      let cart = JSON.parse(localStorage.getItem('bejeweledCart')) || [];
+      const existingIndex = cart.findIndex(p => p.name === product.name);
+
+      if (existingIndex > -1) {
+        cart[existingIndex].quantity += 1;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+
+      localStorage.setItem('bejeweledCart', JSON.stringify(cart));
+      alert('Added to cart!');
+    }
+  </script>
+</body>
+</html>
