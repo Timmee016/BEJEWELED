@@ -7,7 +7,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     alert('Thank you for contacting us!');
     this.reset();
 });
-<script>
+
+
+
   let slideIndex = 0;
   const slides = document.querySelectorAll('.hero-slide');
 
@@ -25,4 +27,4 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
   // Start slideshow
   setInterval(showSlides, 5000); // 5 seconds
-</script>
+
