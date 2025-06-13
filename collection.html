@@ -1,49 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Collection | Bejeweled by TC</title>
-    <link rel="stylesheet" href="collection.css">
-    <script defer src="collection.js"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Collections | Bejeweled by TC</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Bejeweled by TC</div>
-            
-        </nav>
-    </header>
 
-    <section id="collection">
-        <h2>Our Exquisite Collection</h2>
-        <div class="gallery">
-            <div class="item">
-                <video src="video1.mp4" alt="Elegant Gold Ring">
-                <p>Elegant Gold Ring</p>
-            </div>
-            <div class="item">
-                <img src="images/necklace.jpg" alt="Diamond Necklace">
-                <p>Diamond Necklace</p>
-            </div>
-            <div class="item">
-                <img src="images/bracelet.jpg" alt="Gold Bracelet">
-                <p>Charming Gold Bracelet</p>
-            </div>
-            <div class="item">
-                <img src="images/earrings.jpg" alt="Luxury Earrings">
-                <p>Luxury Gold Earrings</p>
-            </div>
-            <div class="item">
-                <img src="images/watch.jpg" alt="Premium Gold Watch">
-                <p>Premium Gold Watch</p>
-            </div>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">Bejeweled by TC</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="collections.html" class="active">Collection</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section container">
+    <h1 style="text-align: center; color: #c09578;">Our Collection</h1>
+
+    <section class="category-section">
+      <h2>Necklaces</h2>
+      <div class="product-grid">
+        <!-- Add your necklace items here -->
+        <div class="product-card">
+          <img src="images/necklace.jpg" alt="Necklace Example" />
+          <h3>Diamond Choker</h3>
         </div>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Bejeweled by TC. All rights reserved.</p>
-    </footer>
+    <section class="category-section">
+      <h2>Bracelets</h2>
+      <div class="product-grid">
+        <!-- Bracelets -->
+        <div class="product-card">
+          <img src="images/bracelet.jpg" alt="Bracelet Example" />
+          <h3>Gold Beaded Bracelet</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>Anklets</h2>
+      <div class="product-grid">
+        <!-- Anklets -->
+        <div class="product-card">
+          <img src="images/anklet.jpg" alt="Anklet Example" />
+          <h3>Silver Chain Anklet</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>Wristwatches</h2>
+      <div class="product-grid">
+        <!-- Wristwatches -->
+        <div class="product-card">
+          <img src="images/watch.jpg" alt="Watch Example" />
+          <h3>Luxury Rose Watch</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>Engraving Pieces</h2>
+      <div class="product-grid">
+        <!-- Engraved items -->
+        <div class="product-card">
+          <img src="images/engraved.jpg" alt="Engraved Jewelry" />
+          <h3>Custom Name Necklace</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>Arm Cuffs</h2>
+      <div class="product-grid">
+        <!-- Arm cuffs -->
+        <div class="product-card">
+          <img src="images/cuff.jpg" alt="Arm Cuff" />
+          <h3>Minimalist Arm Cuff</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>Rings</h2>
+      <div class="product-grid">
+        <!-- Rings -->
+        <div class="product-card">
+          <img src="images/ring.jpg" alt="Gold Ring" />
+          <h3>Classic Gold Ring</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 Bejeweled by TC. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
