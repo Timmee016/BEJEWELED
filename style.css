@@ -60,7 +60,7 @@ body {
   color: #b88e6a;
 }
 
-/* Hero Section */
+/* Hero Section 
 .hero-section {
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero-bg.jpg') center/cover no-repeat;
   height: 90vh;
@@ -104,9 +104,49 @@ body {
 .btn-primary:hover {
   background-color: #a77b59;
   transform: translateY(-2px);
+}*/
+
+ /*Sections */
+
+.hero-section {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
 }
 
-/* Sections */
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  display: flex;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
+
+
+
+
+
 .section {
   padding: 80px 0;
 }
